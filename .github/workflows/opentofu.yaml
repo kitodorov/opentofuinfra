@@ -19,11 +19,11 @@ jobs:
           echo "$HOME/.opentofu/bin" >> $GITHUB_PATH
 
       - name: Init OpenTofu
-        working-directory: opentofuinfra
+        working-directory: .
         run: tofu init
 
       - name: Plan
-        working-directory: opentofuinfra
+        working-directory: .
         run: |
           tofu plan \
             -var "subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
