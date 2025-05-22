@@ -17,13 +17,13 @@ jobs:
         run: |
           curl -s https://get.opentofu.org/install.sh | bash
           echo "$HOME/.opentofu/bin" >> $GITHUB_PATH
+          export PATH="$HOME/.opentofu/bin:$PATH"
+          which tofu
 
       - name: Init OpenTofu
-        working-directory: .
         run: tofu init
 
       - name: Plan
-        working-directory: .
         run: |
           tofu plan \
             -var "subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
