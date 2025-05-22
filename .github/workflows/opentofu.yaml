@@ -17,8 +17,8 @@ jobs:
         run: |
           set -x
           curl -v https://get.opentofu.org/install-opentofu.sh -o install-opentofu.sh
-          cat install.sh
-          bash install.sh
+          cat install-opentofu.sh
+          bash install-opentofu.sh
           echo "$HOME/.opentofu/bin" >> $GITHUB_PATH
           export PATH="$HOME/.opentofu/bin:$PATH"
           which tofu
