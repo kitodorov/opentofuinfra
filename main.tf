@@ -19,7 +19,7 @@ provider "azurerm" {
 
 // comment: This is a comment
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+  name     = "opentofu-test-rg"
   location = "West Europe"
   tags = {
     environment = "testing"
