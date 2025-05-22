@@ -12,15 +12,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install OpenTofu
-      - uses: opentofu/setup-opentofu@v1
 
-      # - name: Install OpenTofu
-      #   run: |
-      #     curl -s https://get.opentofu.org/install.sh | bash
-      #     echo "$HOME/.opentofu/bin" >> $GITHUB_PATH
-      #     # export PATH="$HOME/.opentofu/bin:$PATH"
-      #     # which tofu
+      - name: Install OpenTofu
+        run: |
+          curl -s https://get.opentofu.org/install.sh | bash
+          echo "$HOME/.opentofu/bin" >> $GITHUB_PATH
+          export PATH="$HOME/.opentofu/bin:$PATH"
+          which tofu
 
       - name: Init OpenTofu
         run: tofu init
