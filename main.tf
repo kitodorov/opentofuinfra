@@ -17,6 +17,7 @@ provider "azurerm" {
   tenant_id       = var.AZURE_TENANT_ID
 }
 
+// comment: This is a comment
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "West Europe"
