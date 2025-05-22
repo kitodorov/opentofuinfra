@@ -2,12 +2,8 @@ name: OpenTofu CI
 
 on:
   push:
-    paths:
-      - 'opentofuinfra/**'
-      - '.github/workflows/opentofu.yml'
-  pull_request:
-    paths:
-      - 'opentofuinfra/**'
+    branches:
+      - master
 
 jobs:
   opentofu:
